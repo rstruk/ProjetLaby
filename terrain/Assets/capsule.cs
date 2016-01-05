@@ -8,13 +8,16 @@ public class capsule : MonoBehaviour {
 	private Rigidbody rb;
 	private Transform tf;
 	private float thrust;
-
+	private float distToGround; 
+ 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		tf = GetComponent<Transform>();
 		hasJustTeleported = false;
 		thrust = 10f;
+		distToGround = GetComponent<Collider>().bounds.extents.y;
+		Debug.Log(distToGround);
 	}
 	
 	// Update is called once per frame
@@ -39,12 +42,16 @@ public class capsule : MonoBehaviour {
 		
 		if(Input.GetKey(KeyCode.Space)) {
 			_speed += tf.up;
-		}
-		if (rb.velocity.y == 0f){
-			rb.velocity += new Vector3(0f, _speed.y * 5f, 0f);
+			if (IsGrounded()){
+				rb.velocity += new Vector3(0f, _speed.y * 10f, 0f);
+			}
 		}
 		
 		rb.velocity = new Vector3(_speed.x , rb.velocity.y, _speed.z);	
-		Debug.Log(rb.velocity);
+	}
+	
+	bool IsGrounded() {
+		bool onfloor = Physics.Raycast(tf.position, -tf.up, (float)distToGround + 0.1f);
+		return onfloor;
 	}
 }
