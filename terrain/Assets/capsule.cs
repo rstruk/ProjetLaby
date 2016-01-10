@@ -27,16 +27,16 @@ public class capsule : MonoBehaviour {
 		float deltax = Input.GetAxis("Mouse X");
 		rb.angularVelocity = new Vector3(0f, deltax * 2f, 0f);
 		
-		if (Input.GetKey(KeyCode.UpArrow)) {
+		if (Input.GetKey(KeyCode.Z)) {
 			_speed += tf.forward * thrust;
 		}
-		if (Input.GetKey(KeyCode.DownArrow)) {
+		if (Input.GetKey(KeyCode.S)) {
 			_speed -= tf.forward * thrust;
 		}
-		if (Input.GetKey(KeyCode.LeftArrow)) {
+		if (Input.GetKey(KeyCode.Q)) {
 			_speed -= tf.right * thrust;
 		}
-		if (Input.GetKey(KeyCode.RightArrow)) {
+		if (Input.GetKey(KeyCode.D)) {
 			_speed += tf.right * thrust;
 		}
 		
