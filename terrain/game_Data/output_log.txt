@@ -1,0 +1,53 @@
+Mono path[0] = 'C:/Users/magali/Documents/projet/ProjetLaby/terrain/game_Data/Managed'
+Mono path[1] = 'C:/Users/magali/Documents/projet/ProjetLaby/terrain/game_Data/Mono'
+Mono config path = 'C:/Users/magali/Documents/projet/ProjetLaby/terrain/game_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/magali/Documents/projet/ProjetLaby/terrain/game_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55412
+Multi-casting "[IP] 192.168.0.22 [Port] 55412 [Flags] 2 [Guid] 1352477955 [EditorId] 2861917860 [Version] 1048832 [Id] WindowsPlayer(disgusting) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.22:55412]
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 950M         (ID=0x139a)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.047 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\magali\Documents\projet\ProjetLaby\terrain\game_Data\Managed\System.dll (this message is harmless)
+1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+capsule:Start() (at C:\Users\magali\Documents\projet\ProjetLaby\terrain\Assets\capsule.cs:20)
+ 
+(Filename: C:/Users/magali/Documents/projet/ProjetLaby/terrain/Assets/capsule.cs Line: 20)
+
+teleporter1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+teleportation:Start() (at C:\Users\magali\Documents\projet\ProjetLaby\terrain\Assets\teleportation.cs:11)
+ 
+(Filename: C:/Users/magali/Documents/projet/ProjetLaby/terrain/Assets/teleportation.cs Line: 11)
+
+teleporter2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+teleportation:Start() (at C:\Users\magali\Documents\projet\ProjetLaby\terrain\Assets\teleportation.cs:11)
+ 
+(Filename: C:/Users/magali/Documents/projet/ProjetLaby/terrain/Assets/teleportation.cs Line: 11)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 14d8 -> priority: 1 

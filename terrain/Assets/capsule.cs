@@ -43,7 +43,7 @@ public class capsule : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space)) {
 			_speed += tf.up;
 			if (IsGrounded()){
-				rb.velocity += new Vector3(0f, _speed.y * 10f, 0f);
+				rb.velocity = new Vector3(rb.velocity.x, _speed.y * 10f, rb.velocity.z);
 			}
 		}
 		
