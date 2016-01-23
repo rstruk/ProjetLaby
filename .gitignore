@@ -16,7 +16,7 @@
 *.exe
 *.meta
 */ProjectSettings/*
-
+*.dll
 
 # Unity3D generated meta files
 *.pidb.meta
