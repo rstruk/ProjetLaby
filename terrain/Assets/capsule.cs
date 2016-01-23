@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Fungus;
 
 public class capsule : MonoBehaviour {
+
+	public Flowchart flow;
 
 	public bool hasJustTeleported;
 	private Vector3 _speed;
@@ -18,15 +21,18 @@ public class capsule : MonoBehaviour {
 		thrust = 10f;
 		distToGround = GetComponent<Collider>().bounds.extents.y;
 		Debug.Log(distToGround);
+		flow.SetBooleanVariable("isSpeaking", false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		_speed =  new Vector3(0f, 0f, 0f);
-		
+		if(flow.GetBooleanVariable("isSpeaking") == false){	
 		float deltax = Input.GetAxis("Mouse X");
 		rb.angularVelocity = new Vector3(0f, deltax * 2f, 0f);
 		
+//		Debug.Log(flow.GetBooleanVariable("isSpeaking"));
+
 		if (Input.GetKey(KeyCode.Z)) {
 			_speed += tf.forward * thrust;
 		}
@@ -45,6 +51,7 @@ public class capsule : MonoBehaviour {
 			if (IsGrounded()){
 				rb.velocity = new Vector3(rb.velocity.x, _speed.y * 10f, rb.velocity.z);
 			}
+		}
 		}
 		
 		rb.velocity = new Vector3(_speed.x , rb.velocity.y, _speed.z);	
