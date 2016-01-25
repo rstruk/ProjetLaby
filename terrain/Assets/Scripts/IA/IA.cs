@@ -5,6 +5,7 @@ public class IA : MonoBehaviour {
 	private NavMeshAgent navAgent;
 	private NavMesh navMesh;
 	private Transform player;
+	public Transform playerDestination;
 	private Comportement comportement;
 	public string comportementType;
 	private int timer;
@@ -13,7 +14,9 @@ public class IA : MonoBehaviour {
 		CheckComportement();
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 		navAgent = GetComponent<NavMeshAgent> ();
-	
+		if (playerDestination == null) {
+			playerDestination = transform;
+		}
 	}
 
 	void CheckComportement(){
@@ -26,7 +29,7 @@ public class IA : MonoBehaviour {
 		comportement = Comportement.getComportement (comportementType);
 		comportement.iapos = transform.position;
 		if (timer == 0) {
-			comportement.CalculateDestination ();
+			comportement.CalculateDestination (playerDestination);
 			navAgent.SetDestination (comportement.destination);
 			timer = comportement.timeBeforeUpdate;
 		}

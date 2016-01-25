@@ -5,10 +5,11 @@ abstract public class Comportement{
 
 	public Vector3 destination;
 	public Vector3 iapos;
+
 	public int timeBeforeUpdate = 50;
 
 
-	public abstract void CalculateDestination ();
+	public abstract void CalculateDestination (Transform playerDestination);
 
 
 	public static Comportement getComportement(string type){
