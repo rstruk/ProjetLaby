@@ -1,10 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Fungus;
 
 public class EnemyComportement : Comportement {
+	private bool b1 = true;
+	private bool b2 = true;
+	private bool b3 = true;
 
 	public override void CalculateDestination(Transform playerDestination){
-		Vector3 PDest = iapos;
+		Flowchart flow = GameObject.FindGameObjectWithTag ("Player").GetComponent<capsule>.flow;
+		if (b1 && flow.GetIntegerVariable ("Blops1") < 0) {
+			destination = GameObject.Find ("Blop1").transform.position;
+			b1 = false;
+			timeBeforeUpdate = 500;
+		}
+		else if (b2 && flow.GetIntegerVariable ("Blops2") < 0) {
+			destination = GameObject.Find ("Blop2").transform.position;
+			b2 = false;
+			timeBeforeUpdate = 500;
+		}
+		else if (b3 && flow.GetIntegerVariable ("Blop3") < 0) {
+			destination = GameObject.Find ("Blop3").transform.position;
+			b3 = false;
+			timeBeforeUpdate = 500;
+		}
+		else{
+			timeBeforeUpdate = 50;
+			Vector3 PDest = iapos;
 		if(playerDestination != null)
 			PDest = playerDestination.position;
 		destination = iapos;
@@ -45,3 +67,4 @@ public class EnemyComportement : Comportement {
 	}
 }
 
+}
