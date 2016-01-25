@@ -21,10 +21,7 @@ public class fungusEventTrigger : MonoBehaviour {
 		if (other.gameObject.name == "player") {
 			GameObject player = other.gameObject;
 			Debug.Log("bla");
-			//empêcher le mouvement player
-			//empêcher le mouvement caméra
 			flow.ExecuteBlock(block_name);
 		}
-	}
-		
+	}		
 }
