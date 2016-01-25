@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RandomComportement : Comportement {
 
-	public override void CalculateDestination(){
+	public override void CalculateDestination(Transform playerDestination){
 		if(Random.Range(0,100) < 90)
 			timeBeforeUpdate = 50;
 		else

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FollowComportement : Comportement {
 
-	public override void CalculateDestination(){
+	public override void CalculateDestination(Transform playerDestination){
 		Transform player = GameObject.FindGameObjectWithTag ("Player").transform;
 		Vector3 dist = player.position - iapos;
 		if (dist.magnitude > 5f)

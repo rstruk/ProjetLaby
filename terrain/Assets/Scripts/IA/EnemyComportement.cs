@@ -3,12 +3,15 @@ using System.Collections;
 
 public class EnemyComportement : Comportement {
 
-	public override void CalculateDestination(){
+	public override void CalculateDestination(Transform playerDestination){
+		Vector3 PDest = iapos;
+		if(playerDestination != null)
+			PDest = playerDestination.position;
 		destination = iapos;
 		NavMeshPath path = new NavMeshPath ();
 		Transform player = GameObject.FindGameObjectWithTag ("Player").transform;
-		NavMesh.CalculatePath (player.position, iapos, NavMesh.AllAreas, path);
-		Vector3[] corners = new Vector3[1000];
+		NavMesh.CalculatePath (player.position, PDest , NavMesh.AllAreas, path);
+		Vector3[] corners = new Vector3[100];
 		int nbCorners = path.GetCornersNonAlloc (corners);
 		GameObject[] obstacleSwitchs = GameObject.FindGameObjectsWithTag ("ObstacleSwitch");
 		float initialDist = 0.0f;
@@ -35,12 +38,7 @@ public class EnemyComportement : Comportement {
 				initialDist = nextDist;
 			}
 		
-					//obstacle.GetComponent<BoxCollider>().bounds.Contains(corners[i])){
-			//		destination = go.transform.position;
-		//			timeBeforeUpdate = 500;
-		//			break;
-	//			}
-	//		}
+
 		}
 		//Debug.Log (nbCorners);
 	
