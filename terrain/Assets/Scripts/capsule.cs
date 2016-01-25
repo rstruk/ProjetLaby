@@ -24,6 +24,10 @@ public class capsule : MonoBehaviour {
 		flow.SetBooleanVariable("isSpeaking", false);
 	}
 	
+	void Awake() {
+         DontDestroyOnLoad(flow);
+     }
+	
 	// Update is called once per frame
 	void Update () {
 		_speed =  new Vector3(0f, 0f, 0f);
