@@ -14,9 +14,9 @@
 *.pidb
 *.booproj
 *.exe
-*.meta
-*/ProjectSettings/*
 *.dll
+*.x86_64
+*/jeu_Data/*
 
 # Unity3D generated meta files
 *.pidb.meta

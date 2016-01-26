@@ -131,6 +131,12 @@ namespace Fungus
 		public List<string> hideCommands = new List<string>();
 
 		/**
+		 * Position in the center of all blocks in the flowchart.
+		 */
+		[NonSerialized]
+		public Vector2 centerPosition = Vector2.zero;
+
+		/**
 		 * Cached list of flowchart objects in the scene for fast lookup
 		 */
 		public static List<Flowchart> cachedFlowcharts = new List<Flowchart>();
@@ -246,7 +252,11 @@ namespace Fungus
 			// they waste memory so should be cleared out periodically.
 
 			Block[] blocks = GetComponentsInChildren<Block>();
-			
+
+			// Remove any null entries in the variables list
+			// It shouldn't happen but it seemed to occur for a user on the forum 
+			variables.RemoveAll(item => item == null);
+
 			foreach (Variable variable in GetComponents<Variable>())
 			{
 				if (!variables.Contains(variable))
@@ -310,14 +320,7 @@ namespace Fungus
         }
 
 	    protected virtual void Initialize()
-	    {
-            // If there are other flowcharts in the scene and the selected block has the default name, then this is probably a new block.
-            // Reset the event handler of the new flowchart's default block to avoid crashes.
-            if (selectedBlock && cachedFlowcharts.Count > 1 && selectedBlock.blockName == DEFAULT_BLOCK_NAME)
-            {
-                selectedBlock.eventHandler = null;
-            }
-        }
+	    {}
 
 		protected virtual Block CreateBlockComponent(GameObject parent)
 		{
@@ -423,6 +426,21 @@ namespace Fungus
 			block.Execute(onComplete);
 
 			return true;
+		}
+
+		/**
+		 * Stop all executing Blocks in this Flowchart.
+		 */
+		public virtual void StopAllBlocks()
+		{
+			Block [] blocks = GetComponentsInChildren<Block>();
+			foreach (Block block in blocks)
+			{
+				if (block.IsExecuting())
+				{
+					block.Stop();
+				}
+			}
 		}
 
 		/**
@@ -571,7 +589,7 @@ namespace Fungus
 		{
 			foreach (Variable variable in variables)
 			{
-				if (variable.key == key)
+				if (variable != null && variable.key == key)
 				{
 					return variable as T;
 				}
@@ -588,7 +606,7 @@ namespace Fungus
 			List<Variable> publicVariables = new List<Variable>();
 			foreach (Variable v in variables)
 			{
-				if (v.scope == VariableScope.Public)
+				if (v != null && v.scope == VariableScope.Public)
 				{
 					publicVariables.Add(v);
 				}
@@ -605,7 +623,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					BooleanVariable variable = v as BooleanVariable;
 					if (variable != null)
@@ -626,7 +644,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					BooleanVariable variable = v as BooleanVariable;
 					if (variable != null)
@@ -647,7 +665,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					IntegerVariable variable = v as IntegerVariable;
 					if (variable != null)
@@ -668,7 +686,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					IntegerVariable variable = v as IntegerVariable;
 					if (variable != null)
@@ -689,7 +707,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					FloatVariable variable = v as FloatVariable;
 					if (variable != null)
@@ -710,7 +728,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					FloatVariable variable = v as FloatVariable;
 					if (variable != null)
@@ -731,7 +749,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					StringVariable variable = v as StringVariable;
 					if (variable != null)
@@ -752,7 +770,7 @@ namespace Fungus
 		{
 			foreach (Variable v in variables)
 			{
-				if (v.key == key)
+				if (v != null && v.key == key)
 				{
 					StringVariable variable = v as StringVariable;
 					if (variable != null)
@@ -862,6 +880,41 @@ namespace Fungus
 			return true;
 		}
 
+		/**
+		 * Returns true if there are any executing blocks in this Flowchart.
+		 */
+		public virtual bool HasExecutingBlocks()
+		{
+			Block[] blocks = GetComponentsInChildren<Block>();
+			foreach (Block block in blocks)
+			{
+				if (block.IsExecuting())
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		/**
+		 * Returns a list of all executing blocks in this Flowchart.
+		 */
+		public virtual List<Block> GetExecutingBlocks()
+		{
+			List<Block> executingBlocks = new List<Block>();
+
+			Block[] blocks = GetComponentsInChildren<Block>();
+			foreach (Block block in blocks)
+			{
+				if (block.IsExecuting())
+				{
+					executingBlocks.Add(block);
+				}
+			}
+
+			return executingBlocks;
+		}
+
 		public virtual string SubstituteVariables(string text)
 		{
 			string subbedText = text;
@@ -878,6 +931,9 @@ namespace Fungus
 				// Look for any matching variables in this Flowchart first (public or private)
 				foreach (Variable variable in variables)
 				{
+					if (variable == null)
+						continue;
+
 					if (variable.key == key)
 					{	
 						string value = variable.ToString();
@@ -896,6 +952,9 @@ namespace Fungus
 
 					foreach (Variable variable in flowchart.variables)
 					{
+						if (variable == null)
+							continue;
+						
 						if (variable.scope == VariableScope.Public &&
 							variable.key == key)
 						{	
