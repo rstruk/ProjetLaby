@@ -8,7 +8,8 @@ public class BlopComportement : Comportement {
 
 
 	public override void CalculateDestination(Transform blop){
-		Flowchart flow = GameObject.FindGameObjectWithTag ("Player").GetComponent<capsule>.flow;
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		Flowchart flow = player.GetComponent<capsule>().flow;
 		if ((flow.GetIntegerVariable ("Blops1") > 0 && blop.parent != null && blop.parent.gameObject != null && blop.parent.gameObject.name == "Blop1") ||
 			(flow.GetIntegerVariable ("Blops2") > 0 && blop.parent != null && blop.parent.gameObject != null && blop.parent.gameObject.name == "Blop2") ||
 			(flow.GetIntegerVariable ("Blops3") > 0 && blop.parent != null && blop.parent.gameObject != null && blop.parent.gameObject.name == "Blop3") ) {

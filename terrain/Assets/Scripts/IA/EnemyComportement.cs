@@ -8,7 +8,7 @@ public class EnemyComportement : Comportement {
 	private bool b3 = true;
 
 	public override void CalculateDestination(Transform playerDestination){
-		Flowchart flow = GameObject.FindGameObjectWithTag ("Player").GetComponent<capsule>.flow;
+		Flowchart flow = GameObject.FindGameObjectWithTag ("Player").GetComponent<capsule>().flow;
 		if (b1 && flow.GetIntegerVariable ("Blops1") < 0) {
 			destination = GameObject.Find ("Blop1").transform.position;
 			b1 = false;
@@ -55,7 +55,9 @@ public class EnemyComportement : Comportement {
 				nextDist += diff.magnitude;
 			}
 			obstacle.SetActive (!obstacle.activeSelf);
-			if (nextDist > initialDist) {
+				if ((nextDist > initialDist && flow.GetIntegerVariable("Ronroujes")<0) ||
+					(nextDist < initialDist && flow.GetIntegerVariable("Ronroujes")>0)	){
+
 				destination = go.transform.position;
 				initialDist = nextDist;
 			}

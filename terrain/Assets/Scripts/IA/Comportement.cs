@@ -5,7 +5,6 @@ abstract public class Comportement{
 
 	public Vector3 destination;
 	public Vector3 iapos;
-
 	public int timeBeforeUpdate = 50;
 
 
