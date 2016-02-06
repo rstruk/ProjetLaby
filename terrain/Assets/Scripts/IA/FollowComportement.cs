@@ -18,7 +18,5 @@ public class FollowComportement : Comportement {
 		}
 		else
 			destination = new Vector3 (0, 0, 0);
-		
+	}
 }
-
-
