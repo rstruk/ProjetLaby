@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: f637c5ce9d10e45c7855ed89bfc6b97e
 AudioImporter:
+<<<<<<< HEAD
   serializedVersion: 6
   defaultSettings:
     loadType: 1
@@ -18,3 +19,14 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+  serializedVersion: 4
+  format: -1
+  quality: .5
+  stream: 1
+  3D: 0
+  forceToMono: 0
+  useHardware: 0
+  loopable: 0
+  userData: 
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8

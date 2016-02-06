@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e9a9781cad112c75d0008dfa8d76c639
+=======
+guid: 06b0d92ab6f2749f89fd0643823eb822
+timeCreated: 1453556264
+licenseType: Free
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -10,7 +16,11 @@ TextureImporter:
     correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+<<<<<<< HEAD
     mipMapFadeDistanceStart: 2
+=======
+    mipMapFadeDistanceStart: 1
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
@@ -24,6 +34,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: 3
   maxTextureSize: 1024
   textureSettings:
@@ -32,6 +43,16 @@ TextureImporter:
     mipBias: 0
     wrapMode: 1
   nPOTScale: 0
+=======
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 1
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   lightmap: 0
   rGBM: 0
   compressionQuality: 50

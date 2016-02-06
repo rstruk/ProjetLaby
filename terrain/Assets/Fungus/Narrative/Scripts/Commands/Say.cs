@@ -58,6 +58,11 @@ namespace Fungus
 			executionCount++;
 
 			// Override the active say dialog if needed
+			if (character != null && character.setSayDialog != null)
+			{
+				SayDialog.activeSayDialog = character.setSayDialog;
+			}
+
 			if (setSayDialog != null)
 			{
 				SayDialog.activeSayDialog = setSayDialog;
@@ -118,6 +123,17 @@ namespace Fungus
 		public override void OnReset()
 		{
 			executionCount = 0;
+		}
+
+		public override void OnStopExecuting()
+		{
+			SayDialog sayDialog = SayDialog.GetSayDialog();
+			if (sayDialog == null)
+			{
+				return;
+			}
+
+			sayDialog.Stop();
 		}
 
 		//

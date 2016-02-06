@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 89a037199d11087f1100e2b844295342
 MonoImporter:
   serializedVersion: 2
@@ -12,6 +13,14 @@ MonoImporter:
   - blitAddSmoothShader: {fileID: 4800000, guid: 7741a77a7c455d0418bc429bd508dc87,
       type: 3}
   - blitBlendShader: {fileID: 4800000, guid: f1cf7e9c98754c4429ff0f7cc1d9dd7b, type: 3}
+=======
+guid: 29eb1c2db53a34318ba9e12775040a50
+timeCreated: 1453556236
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

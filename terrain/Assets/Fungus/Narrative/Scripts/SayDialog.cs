@@ -26,9 +26,6 @@ namespace Fungus
 		[Tooltip("Adjust width of story text when Character Image is displayed (to avoid overlapping)")]
 		public bool fitTextWithImage = true;
 
-		[Tooltip("Scale factor to apply to story text width when Character Image is displayed")]
-		public float textWidthScale = 0.8f;
-
 		protected float startStoryTextWidth; 
 		protected float startStoryTextInset;
 
@@ -129,34 +126,40 @@ namespace Fungus
 			}
 		}
 
-		public virtual void Say(string text, bool clearPrevious, bool waitForInput, bool fadeWhenDone, AudioClip audioClip, Action onComplete)
+		public virtual void Say(string text, bool clearPrevious, bool waitForInput, bool fadeWhenDone, AudioClip voiceOverClip, Action onComplete)
 		{
-			StartCoroutine(SayInternal(text, clearPrevious, waitForInput, fadeWhenDone, audioClip, onComplete));
+			StartCoroutine(SayInternal(text, clearPrevious, waitForInput, fadeWhenDone, voiceOverClip, onComplete));
 		}
 
-		protected virtual IEnumerator SayInternal(string text, bool clearPrevious, bool waitForInput, bool fadeWhenDone, AudioClip audioClip, Action onComplete)
+		protected virtual IEnumerator SayInternal(string text, bool clearPrevious, bool waitForInput, bool fadeWhenDone, AudioClip voiceOverClip, Action onComplete)
 		{
 			Writer writer = GetWriter();
 
-			// Stop any existing Say Command and write this one instead
-			// This will probably take a frame or two to complete
-			while (writer.isWriting || writer.isWaitingForInput)
+			if (writer.isWriting || writer.isWaitingForInput)
 			{
 				writer.Stop();
-				yield return null;
+				while (writer.isWriting || writer.isWaitingForInput)
+				{
+					yield return null;
+				}
 			}
 
 			this.fadeWhenDone = fadeWhenDone;
 
-			// Look for a character sound effect if no voice over clip is specified
-			AudioClip clip = audioClip;
-			if (speakingCharacter != null &&
-			    clip == null)
-			{
-				clip = speakingCharacter.soundEffect;
-			}
+			// Voice over clip takes precedence over a character sound effect if provided
 
-			writer.Write(text, clearPrevious, waitForInput, clip, onComplete);
+			AudioClip soundEffectClip = null;
+			if (voiceOverClip != null)
+			{
+				WriterAudio writerAudio = GetWriterAudio();
+				writerAudio.PlayVoiceover(voiceOverClip);
+			}
+			else if (speakingCharacter != null)
+			{
+				soundEffectClip = speakingCharacter.soundEffect;
+			}
+			writer.Write(text, clearPrevious, waitForInput, soundEffectClip, onComplete);
+
 		}
 
 		protected virtual void LateUpdate()

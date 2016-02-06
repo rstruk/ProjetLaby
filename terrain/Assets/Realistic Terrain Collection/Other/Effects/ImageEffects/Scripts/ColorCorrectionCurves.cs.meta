@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1fd999d1b2cf94a45a5b0a47ce074bef
 MonoImporter:
   serializedVersion: 2
@@ -9,6 +10,14 @@ MonoImporter:
       type: 3}
   - colorCorrectionSelectiveShader: {fileID: 4800000, guid: e515e0f94cefc4c0db54b45cba621544,
       type: 3}
+=======
+guid: c40d49dc76c1b489291581c9e38b3051
+timeCreated: 1453556240
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

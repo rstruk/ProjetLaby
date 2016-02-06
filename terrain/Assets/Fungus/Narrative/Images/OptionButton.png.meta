@@ -15,14 +15,21 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
+<<<<<<< HEAD
     heightScale: 0.25
+=======
+    heightScale: .25
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+<<<<<<< HEAD
   cubemapConvolution: 0
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
+=======
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
@@ -33,14 +40,22 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+<<<<<<< HEAD
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
+=======
+  compressionQuality: 50
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
+<<<<<<< HEAD
   spritePivot: {x: 0.5, y: 0.5}
+=======
+  spritePivot: {x: .5, y: .5}
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   spriteBorder: {x: 20, y: 26, z: 20, w: 20}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -48,8 +63,13 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites: []
+<<<<<<< HEAD
     outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+  spritePackingTag: 
+  userData: 
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8

@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8
 MonoImporter:
   serializedVersion: 2
@@ -8,6 +9,14 @@ MonoImporter:
       type: 3}
   - chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
       type: 3}
+=======
+guid: acf85c96d0eca49ec91726b4fbfed335
+timeCreated: 1453556239
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

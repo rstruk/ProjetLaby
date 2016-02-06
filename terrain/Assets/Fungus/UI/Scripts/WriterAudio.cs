@@ -43,6 +43,12 @@ namespace Fungus
 		// When true, a beep will be played on every written character glyph
 		protected bool playBeeps;
 
+		// True when a voiceover clip is playing
+		protected bool playingVoiceover = false;
+
+		// Time when current beep will have finished playing
+		protected float nextBeepTime;
+
 		public virtual void SetAudioMode(AudioMode mode)
 		{
 			audioMode = mode;
@@ -63,6 +69,28 @@ namespace Fungus
 			targetAudioSource.volume = 0f;
 		}
 
+		/**
+		 * Plays a voiceover audio clip.
+		 * Voiceover behaves differently than speaking sound effects because it 
+		 * should keep on playing after the text has finished writing. It also
+		 * does not pause for wait tags, punctuation, etc.
+		 */
+		public virtual void PlayVoiceover(AudioClip voiceOverClip)
+		{
+			if (targetAudioSource == null)
+			{
+				return;
+			}
+
+			playingVoiceover = true;
+
+			targetAudioSource.volume = 1f;
+			targetVolume = 1f;
+			targetAudioSource.loop = false;
+			targetAudioSource.clip = voiceOverClip;
+			targetAudioSource.Play();
+		}
+
 		public virtual void Play(AudioClip audioClip)
 		{
 			if (targetAudioSource == null ||
@@ -72,6 +100,7 @@ namespace Fungus
 				return;
 			}
 
+			playingVoiceover = false;
 			targetAudioSource.volume = 0f;
 			targetVolume = 1f;
 
@@ -122,6 +151,7 @@ namespace Fungus
 			targetVolume = 0f;
 			targetAudioSource.loop = false;
 			playBeeps = false;
+			playingVoiceover = false;
 		}
 
 		public virtual void Resume()
@@ -154,16 +184,28 @@ namespace Fungus
 
 		public virtual void OnStart(AudioClip audioClip)
 		{
+			if (playingVoiceover)
+			{
+				return;
+			}
 			Play(audioClip);
 		}
 		
 		public virtual void OnPause()
 		{
+			if (playingVoiceover)
+			{
+				return;
+			}
 			Pause();
 		}
 		
 		public virtual void OnResume()
 		{
+			if (playingVoiceover)
+			{
+				return;
+			}
 			Resume();
 		}
 		
@@ -171,16 +213,29 @@ namespace Fungus
 		{
 			Stop();
 		}
-		
+
 		public virtual void OnGlyph()
 		{
+			if (playingVoiceover)
+			{
+				return;
+			}
+
 			if (playBeeps && beepSounds.Count > 0)
 			{
 				if (!targetAudioSource.isPlaying)
 				{
-					targetAudioSource.clip = beepSounds[Random.Range(0, beepSounds.Count - 1)];
-					targetAudioSource.loop = false;
-					targetAudioSource.Play();
+					if (nextBeepTime < Time.realtimeSinceStartup)
+					{
+						targetAudioSource.clip = beepSounds[Random.Range(0, beepSounds.Count - 1)];
+						targetAudioSource.loop = false;
+						targetVolume = volume;
+						targetAudioSource.Play();
+
+						float extend = targetAudioSource.clip.length;
+
+						nextBeepTime = Time.realtimeSinceStartup + extend;
+					}
 				}
 			}
 		}
