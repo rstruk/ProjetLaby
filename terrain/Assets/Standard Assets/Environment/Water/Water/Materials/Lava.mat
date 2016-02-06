@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Lava
-  m_Shader: {fileID: 4800000, guid: 4d9814edf4ff84359b2f7ccacb739060, type: 3}
+  m_Shader: {fileID: 4800000, guid: 87709d7ed29336a40bc9682c4fb281b6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000
@@ -26,7 +26,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: c983974da785d4e24b233950be10c3ec, type: 3}
+          m_Texture: {fileID: 2800000, guid: a487163aa904df048a8b3821b0fc4e46, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -96,7 +96,7 @@ Material:
         first:
           name: _Fresnel
         second:
-          m_Texture: {fileID: 2800000, guid: b875d0e85e0814168bbf1c8d21fe98ee, type: 3}
+          m_Texture: {fileID: 2800000, guid: 3bb22c5f1ad6ece4a99d4a0f04f283d6, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:

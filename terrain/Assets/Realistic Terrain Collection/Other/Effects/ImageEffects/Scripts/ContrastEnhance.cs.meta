@@ -1,10 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 3309686a9fbbe6e42a182d5e0257704c
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1,
+      type: 3}
+  - contrastCompositeShader: {fileID: 4800000, guid: 273404942eede4ea1883ca1fb2942507,
+      type: 3}
+=======
 guid: 735ca8b6a570e45488e1c1c48302d0ef
 timeCreated: 1453556237
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

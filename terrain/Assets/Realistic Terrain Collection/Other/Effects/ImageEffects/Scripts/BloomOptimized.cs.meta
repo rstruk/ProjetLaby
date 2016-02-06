@@ -1,10 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 4975a6e437fc3b149a8cd508ce5bdd69
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+=======
 guid: 8bf824d66e98d4311a572befe20b947c
 timeCreated: 1453556238
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

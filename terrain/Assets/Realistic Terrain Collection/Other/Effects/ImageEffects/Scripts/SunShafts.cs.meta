@@ -1,10 +1,20 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 60e318a6043c1cb4a8ce1c8805bab930
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - sunTransform: {instanceID: 0}
+  - sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
+  - simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
+=======
 guid: fa7642f05aea146c29c3ece4862063e8
 timeCreated: 1453556241
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redChannel:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -565,7 +566,9 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   greenChannel:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -579,7 +582,9 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   blueChannel:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -593,8 +598,10 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   useDepthCorrection: 1
   zCurve:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -608,7 +615,9 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   depthRedChannel:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -622,7 +631,9 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   depthGreenChannel:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -636,7 +647,9 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   depthBlueChannel:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -650,18 +663,11 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   saturation: 0.8
   selectiveCc: 0
-  selectiveFromColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  selectiveToColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
+  selectiveFromColor: {r: 1, g: 1, b: 1, a: 1}
+  selectiveToColor: {r: 1, g: 1, b: 1, a: 1}
   mode: 1
   updateTextures: 1
   colorCorrectionCurvesShader: {fileID: 4800000, guid: 62bcade1028c24ca1a39760ed84b9487,
@@ -707,6 +713,7 @@ MonoBehaviour:
   type: 3
   adaptiveTextureSize: 256
   remapCurve:
+    serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
@@ -720,6 +727,7 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   exposureAdjustment: 2.5
   middleGrey: 0.4
   white: 2
@@ -773,11 +781,7 @@ MonoBehaviour:
   quality: 1
   bloomIntensity: 0.25
   bloomThreshold: 0.03
-  bloomThresholdColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
+  bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
   bloomBlurIterations: 4
   hollywoodFlareBlurIterations: 2
   flareRotation: 0
@@ -786,26 +790,10 @@ MonoBehaviour:
   lensflareIntensity: 0
   lensflareThreshold: 0.3
   lensFlareSaturation: 0.75
-  flareColorA:
-    r: 0.4
-    g: 0.4
-    b: 0.8
-    a: 0.75
-  flareColorB:
-    r: 0.4
-    g: 0.8
-    b: 0.8
-    a: 0.75
-  flareColorC:
-    r: 0.8
-    g: 0.4
-    b: 0.8
-    a: 0.75
-  flareColorD:
-    r: 0.8
-    g: 0.4
-    b: 0
-    a: 0.75
+  flareColorA: {r: 0.4, g: 0.4, b: 0.8, a: 0.75}
+  flareColorB: {r: 0.4, g: 0.8, b: 0.8, a: 0.75}
+  flareColorC: {r: 0.8, g: 0.4, b: 0.8, a: 0.75}
+  flareColorD: {r: 0.8, g: 0.4, b: 0, a: 0.75}
   lensFlareVignetteMask: {fileID: 2800000, guid: 95ef4804fe0be4c999ddaa383536cde8,
     type: 3}
   lensFlareShader: {fileID: 4800000, guid: 459fe69d2f6d74ddb92f04dbf45a866b, type: 3}

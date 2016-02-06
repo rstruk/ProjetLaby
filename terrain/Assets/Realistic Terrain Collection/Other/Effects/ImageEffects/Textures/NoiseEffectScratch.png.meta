@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 6205c27cc031f4e66b8ea90d1bfaa158
+=======
 guid: fda98730b3c744aa097ba12fa4e71cf3
 timeCreated: 1453556971
 licenseType: Free
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -12,7 +16,11 @@ TextureImporter:
     correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+<<<<<<< HEAD
+    mipMapFadeDistanceStart: 2
+=======
     mipMapFadeDistanceStart: 1
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
@@ -27,12 +35,21 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
+<<<<<<< HEAD
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapMode: 0
+=======
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: -1
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   nPOTScale: 1
   lightmap: 0
   rGBM: 0
@@ -46,7 +63,11 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
+<<<<<<< HEAD
+  textureType: 0
+=======
   textureType: -1
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
   buildTargetSettings: []
   spriteSheet:
     sprites: []

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: c53b7c20372e444c6bd7f2ac0729bbe2
 timeCreated: 1440509678
+<<<<<<< HEAD
+licenseType: Store
+=======
 licenseType: Free
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
 AudioImporter:
   serializedVersion: 6
   defaultSettings:
@@ -9,7 +13,11 @@ AudioImporter:
     sampleRateSetting: 0
     sampleRateOverride: 0
     compressionFormat: 0
+<<<<<<< HEAD
+    quality: 0.5
+=======
     quality: .5
+>>>>>>> 50c42520298723dadc703d1d1967e253f019e0b8
     conversionMode: 0
   platformSettingOverrides: {}
   forceToMono: 0

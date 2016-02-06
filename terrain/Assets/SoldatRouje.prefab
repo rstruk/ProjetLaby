@@ -45,7 +45,6 @@ MonoBehaviour:
   profileSprite: {fileID: 0}
   portraits: []
   portraitsFace: 0
-  setSayDialog: {fileID: 0}
   description: 
 --- !u!1001 &100100000
 Prefab:
